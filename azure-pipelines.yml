@@ -18,3 +18,20 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: '# Write your commands here
+      echo ;test;
+      # Use the environment variables input below to pass secret variables to this script'
+- task: Ant@1
+  inputs:
+    buildFile: 'build.xml'
+    options: 
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    packageApp: false
