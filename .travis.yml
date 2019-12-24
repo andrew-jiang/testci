@@ -8,3 +8,4 @@ before_script:
 script:
   - echo 'test'
   - echo 'test3'
+  - echo 'test4'
